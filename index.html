@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaurav Arora | 3D Portfolio</title>
+  <meta name="description" content="Gaurav Arora - Web Developer Portfolio with immersive 3D effects.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background-blur blur-one"></div>
+  <div class="background-blur blur-two"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#home">Gaurav Arora</a>
+    <nav class="site-nav">
+      <a href="#about">About</a>
+      <a href="#qualification">Qualification</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">Immersive Web Developer Portfolio</p>
+        <h1>Gaurav Arora</h1>
+        <p class="hero-subtitle">
+          Creating modern websites with bold design, smooth interactions, and high-impact 3D experiences.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-secondary">Let’s Connect</a>
+        </div>
+      </div>
+      <div class="hero-stats reveal">
+        <article class="glass-card">
+          <p>Focus</p>
+          <h3>Web Development</h3>
+        </article>
+        <article class="glass-card">
+          <p>Speciality</p>
+          <h3>3D & Interactive UI</h3>
+        </article>
+        <article class="glass-card">
+          <p>Stack</p>
+          <h3>Frontend + Fullstack</h3>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-title reveal">
+        <p>01</p>
+        <h2>About Me</h2>
+      </div>
+      <div class="about-grid">
+        <article class="glass-card reveal">
+          <p>
+            I am <strong>Gaurav Arora</strong>, a web developer focused on building high-performance and visually rich websites.
+            I enjoy combining clean code with strong creative direction to deliver memorable digital products.
+          </p>
+        </article>
+        <article class="glass-card tilt-card reveal">
+          <h3>What I Build</h3>
+          <ul>
+            <li>Responsive websites and portfolio platforms</li>
+            <li>Interactive UI with animation and micro-interactions</li>
+            <li>Fullstack web applications with API integration</li>
+            <li>Modern frontend architecture and reusable components</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="qualification" class="section">
+      <div class="section-title reveal">
+        <p>02</p>
+        <h2>Qualification</h2>
+      </div>
+      <div class="qualification-grid">
+        <article class="glass-card qualification-copy reveal">
+          <h3>B.Tech in (IT and MI)</h3>
+          <p>
+            Completed <strong>B.Tech in Information Technology and Management & Innovation (IT and MI)</strong>
+            from <strong>Cluster Innovation Center</strong>.
+          </p>
+          <p>
+            Strong foundation in problem solving, software engineering, product thinking, and modern web technologies.
+          </p>
+        </article>
+        <div class="cube-scene reveal" aria-hidden="true">
+          <div class="cube">
+            <div class="face front">B.Tech</div>
+            <div class="face back">IT + MI</div>
+            <div class="face right">CIC</div>
+            <div class="face left">Web Dev</div>
+            <div class="face top">Frontend</div>
+            <div class="face bottom">Backend</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="section-title reveal">
+        <p>03</p>
+        <h2>Skills</h2>
+      </div>
+      <div class="skills-cloud reveal">
+        <span class="skill-pill">HTML5</span>
+        <span class="skill-pill">CSS3</span>
+        <span class="skill-pill">JavaScript</span>
+        <span class="skill-pill">TypeScript</span>
+        <span class="skill-pill">React.js</span>
+        <span class="skill-pill">Next.js</span>
+        <span class="skill-pill">Node.js</span>
+        <span class="skill-pill">Express.js</span>
+        <span class="skill-pill">MongoDB</span>
+        <span class="skill-pill">REST APIs</span>
+        <span class="skill-pill">Git & GitHub</span>
+        <span class="skill-pill">Responsive Design</span>
+        <span class="skill-pill">UI/UX</span>
+        <span class="skill-pill">GSAP & Animation</span>
+        <span class="skill-pill">Three.js Basics</span>
+      </div>
+      <div class="skills-panels">
+        <article class="glass-card tilt-card reveal">
+          <h3>Frontend Development</h3>
+          <p>Building fast, responsive, and accessible interfaces with modern component-driven architecture.</p>
+        </article>
+        <article class="glass-card tilt-card reveal">
+          <h3>Backend & Integration</h3>
+          <p>Developing APIs, integrating services, and managing data flow for scalable web applications.</p>
+        </article>
+        <article class="glass-card tilt-card reveal">
+          <h3>Creative 3D Web UI</h3>
+          <p>Designing immersive digital experiences using motion, depth, perspective, and interactive graphics.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-title reveal">
+        <p>04</p>
+        <h2>Featured Projects</h2>
+      </div>
+      <div class="carousel-shell reveal">
+        <button id="carousel-prev" class="carousel-control" type="button" aria-label="Previous project">‹</button>
+        <div class="carousel-track" id="carousel-track">
+          <article class="carousel-card glass-card">
+            <h3>3D Portfolio Experience</h3>
+            <p>Immersive personal brand site with WebGL visuals, dynamic sections, and smooth transitions.</p>
+          </article>
+          <article class="carousel-card glass-card">
+            <h3>E-Commerce Frontend</h3>
+            <p>Modern responsive shopping UI with cart workflows, filtering, and optimized performance.</p>
+          </article>
+          <article class="carousel-card glass-card">
+            <h3>Fullstack Dashboard</h3>
+            <p>Analytics dashboard with authentication, APIs, and rich data visualizations.</p>
+          </article>
+          <article class="carousel-card glass-card">
+            <h3>Interactive Landing Pages</h3>
+            <p>High-conversion landing pages with animation, parallax depth, and polished micro-interactions.</p>
+          </article>
+          <article class="carousel-card glass-card">
+            <h3>Developer Toolkit App</h3>
+            <p>Utility-rich web app for developers featuring productivity tools and clean UI patterns.</p>
+          </article>
+        </div>
+        <button id="carousel-next" class="carousel-control" type="button" aria-label="Next project">›</button>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section-title reveal">
+        <p>05</p>
+        <h2>Contact</h2>
+      </div>
+      <div class="contact-grid">
+        <article class="glass-card reveal">
+          <h3>Let’s Build Something Great</h3>
+          <p>I am open to internships, freelance projects, and full-time web development opportunities.</p>
+          <a class="btn btn-primary" href="mailto:gaurav@example.com">Email Gaurav Arora</a>
+        </article>
+        <form class="glass-card contact-form reveal">
+          <label>
+            Name
+            <input type="text" placeholder="Your name">
+          </label>
+          <label>
+            Email
+            <input type="email" placeholder="your@email.com">
+          </label>
+          <label>
+            Message
+            <textarea rows="4" placeholder="Tell me about your project"></textarea>
+          </label>
+          <button type="button" class="btn btn-secondary">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Gaurav Arora — Web Developer Portfolio</p>
+  </footer>
+
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
