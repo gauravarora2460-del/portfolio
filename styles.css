@@ -1,0 +1,601 @@
+:root {
+    --bg-color: #fcfcfc;
+    --text-main: #111111;
+    --text-muted: #666666;
+    --accent: #000000;
+    --surface: #ffffff;
+    --border: rgba(0, 0, 0, 0.08);
+    --shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-color);
+}
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--text-main);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 3D Background */
+#webgl-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.8; /* Subtle integration */
+}
+
+/* Navigation */
+.premium-nav {
+    position: fixed;
+    top: 0; width: 100%;
+    height: 80px;
+    background: rgba(252, 252, 252, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+}
+
+.nav-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--text-main);
+    text-decoration: none;
+    letter-spacing: -0.05em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+/* Buttons */
+.luxury-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+}
+
+.luxury-btn:hover {
+    border-color: var(--text-main);
+    transform: translateY(-2px);
+}
+
+.luxury-btn.primary {
+    background: var(--text-main);
+    color: #ffffff;
+    border-color: var(--text-main);
+}
+
+.luxury-btn.primary:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    transform: translateY(-4px);
+}
+
+.luxury-btn.massive {
+    padding: 24px 48px;
+    font-size: 1.25rem;
+}
+
+.whatsapp-btn {
+    background: #25D366; /* Official WhatsApp color */
+    border-color: #25D366;
+    color: white;
+    gap: 12px;
+}
+
+.whatsapp-btn:hover {
+    background: #1EBE5D;
+    border-color: #1EBE5D;
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+}
+
+.wa-icon {
+    width: 28px;
+    height: 28px;
+}
+
+/* Personal Hero Layout - Centered with balanced avatar */
+.hero.personal-hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 40px;
+}
+
+.hero-container {
+    max-width: 800px;
+    width: 100%;
+    z-index: 2;
+    text-align: center;
+}
+
+.intro-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.hero-avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--border);
+    box-shadow: var(--shadow);
+    animation: floatAvatar 6s ease-in-out infinite alternate;
+}
+
+@keyframes floatAvatar {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+.hero-text h1 {
+    font-size: clamp(3.5rem, 8vw, 5.5rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.hero-text .subtitle {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-text .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    opacity: 0.5;
+}
+
+.scroll-indicator span {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+.scroll-indicator .line {
+    width: 1px;
+    height: 40px;
+    background: var(--text-main);
+}
+
+/* Sticky Stacking Section */
+.stacking-section {
+    padding: 160px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.stacking-section .section-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.stacking-section .section-header h2 {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin-bottom: 12px;
+}
+
+.stacking-section .section-header p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+}
+
+.stacking-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: relative;
+    padding-bottom: 80px;
+}
+
+.stacking-card {
+    position: sticky;
+    top: 120px; /* Offset from top of viewport when stuck */
+    padding-top: calc(var(--index) * 20px); /* Slight vertical offset for stacked look */
+}
+
+.card-1 { --index: 1; z-index: 1; }
+.card-2 { --index: 2; z-index: 2; }
+.card-3 { --index: 3; z-index: 3; }
+
+.card-content {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid var(--border);
+    border-radius: 32px;
+    padding: 40px;
+    box-shadow: 0 -20px 60px rgba(0,0,0,0.05), 0 30px 60px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    transform-origin: top center;
+    transition: transform 0.5s ease;
+}
+
+.slide-visual {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #f0f0f0;
+}
+
+.slide-visual img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-content:hover .slide-visual img {
+    transform: scale(1.03);
+}
+
+.slide-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.title-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 16px;
+    width: 100%;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 16px;
+}
+
+.project-num {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.slide-text h3 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.slide-text p {
+    color: var(--text-muted);
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 800px;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--text-main);
+    transition: opacity 0.3s;
+}
+
+.project-link:hover {
+    opacity: 0.5;
+}
+
+/* Expertise Grid */
+.expertise-section {
+    padding: 160px 40px;
+    background: #f5f5f7; /* Very light gray to distinguish section */
+    position: relative;
+    z-index: 10; /* Ensures it scrolls OVER the sticky cards */
+}
+
+.expertise-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.expertise-container .section-header h2 {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin-bottom: 80px;
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.expertise-card {
+    background: var(--surface);
+    border-radius: 32px;
+    padding: 64px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #111;
+    color: #fff;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 40px;
+}
+
+.expertise-card h3 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.expertise-card .institution {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
+
+.expertise-card .desc {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.list-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.list-card li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-radius: 12px;
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.list-card li:hover {
+    background: rgba(0,0,0,0.02);
+    border-color: var(--border);
+    transform: translateX(10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+}
+
+.list-card li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.list-card li strong {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.list-card li span {
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+/* Contact */
+.contact-section {
+    padding: 200px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+    background: var(--surface);
+}
+
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 80vw;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.04) 0%, rgba(255,255,255,0) 70%);
+    z-index: -1;
+    animation: pulseGlow 4s infinite alternate;
+}
+
+@keyframes pulseGlow {
+    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
+    100% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+}
+
+.contact-content {
+    position: relative;
+    z-index: 2;
+}
+
+.mind-boggling-text {
+    font-size: clamp(3rem, 6vw, 6rem);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    margin-bottom: 64px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.1;
+    background: linear-gradient(270deg, #111111, #888888, #111111, #000000);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientFlow 6s ease infinite;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.contact-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.contact-actions .luxury-btn {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.contact-actions .luxury-btn:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.email-btn {
+    background: #ffffff;
+    border-color: #111111;
+    color: #111111;
+    gap: 12px;
+}
+
+.email-btn:hover {
+    background: #111111;
+    color: #ffffff;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-muted);
+    font-weight: 500;
+    position: relative;
+    z-index: 10;
+    background: var(--surface);
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .slide-visual img {
+        height: auto;
+        max-height: 350px;
+        object-fit: contain;
+    }
+    
+    .card-content {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-links { display: none; }
+    .expertise-card { padding: 40px 24px; }
+    .list-card li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .intro-header {
+        flex-direction: column;
+        gap: 16px;
+    }
+}
